@@ -1,0 +1,12 @@
+{
+    "data": [
+        {
+            "widgetTitle": "Tenant",
+            "widgetIcon": "cilLibraryBuilding"
+        },
+        {
+            "widgetTitle": "Users",
+            "widgetIcon": "cilMagnifyingGlass"
+        }
+    ]
+}

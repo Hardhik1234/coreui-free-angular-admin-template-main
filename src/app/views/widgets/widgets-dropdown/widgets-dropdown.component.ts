@@ -9,6 +9,8 @@ import {
 } from '@angular/core';
 import { getStyle } from '@coreui/utils/src';
 import { ChartjsComponent } from '@coreui/angular-chartjs';
+import {HttpClient} from '@angular/common/http' 
+import { ResourceLoader } from '@angular/compiler';
 
 @Component({
   selector: 'app-widgets-dropdown',
@@ -19,9 +21,9 @@ import { ChartjsComponent } from '@coreui/angular-chartjs';
 export class WidgetsDropdownComponent implements OnInit, AfterContentInit {
 
   constructor(
-    private changeDetectorRef: ChangeDetectorRef
+    private changeDetectorRef: ChangeDetectorRef, private http: HttpClient
   ) {}
-
+  widgets: any = []; 
   data: any[] = [];
   options: any[] = [];
   labels = [
@@ -117,6 +119,7 @@ export class WidgetsDropdownComponent implements OnInit, AfterContentInit {
 
   ngOnInit(): void {
     this.setData();
+    this.getWidgets();
   }
 
   ngAfterContentInit(): void {
@@ -167,6 +170,14 @@ export class WidgetsDropdownComponent implements OnInit, AfterContentInit {
         }
       }
     }
+  }
+  getWidgets() {
+    this.http.get('../../../assets/widgetList.json').subscribe((res) => {
+      console.log(res);
+      let result: any = res;
+      this.widgets = result.data;
+      
+    })
   }
 }
 
