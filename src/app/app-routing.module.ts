@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { DefaultLayoutComponent } from './containers';
 
-import { TableViewComponent } from './table-view/table-view.component';
+
 
 const routes: Routes = [
   {
@@ -63,6 +63,11 @@ const routes: Routes = [
         loadChildren: () =>
           import('./views/widgets/widgets.module').then((m) => m.WidgetsModule)
       },
+      {
+        path: 'viewTable',
+        loadChildren: () =>
+          import('./views/data-table/data-table.module').then((m) => m.DataTableModule)
+      },
       // {
       //   path: 'pages',
       //   loadChildren: () =>
@@ -98,7 +103,11 @@ const routes: Routes = [
   //     title: 'Register Page'
   //   }
   // },
-  { path: 'viewTable', component: TableViewComponent },
+  // {
+  //   path: 'viewTable',
+  //   loadChildren: () =>
+  //     import('./views/data-table/data-table.module').then((m) => m.DataTableModule)
+  // },
   { path: '**', redirectTo: 'dashboard' }
 ];
 

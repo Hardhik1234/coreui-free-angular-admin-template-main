@@ -1,14 +1,22 @@
-.borderR {
-    border: 0;
-    .card-body {
-        .text-end {
-            text-align: center !important;
+::ng-deep {
+    .borderR {
+        border: 0;
+        .card-body {
+            .text-end {
+                text-align: center !important;
+            }
+            .text-high-emphasis {
+                color: #fff !important;
+            }
         }
     }
+
 }
 
 .fullSpace {
     width: 100%;
+    border: transparent;
+    background-color: transparent;
 }
 
 .abc {
@@ -18,3 +26,6 @@
 .tileColor {
     background-color: #3c4b64;
 }
+// html:not([dir=rtl]) .text-end {
+//     text-align: center !important;
+// }

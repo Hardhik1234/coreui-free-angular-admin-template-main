@@ -38,7 +38,7 @@
     </a>
   </c-col> --> 
   <c-col sm="6" xl="3" *ngFor="let widget of widgets">
-    <button cButton routerLink="/charts" class="mb-3 p-0 fullSpace">
+    <button cButton routerLink="/viewTable" class="mb-3 p-0 fullSpace">
       <c-widget-stat-c  class="borderR tileColor" value="{{widget.widgetTitle}}">
         <ng-template cTemplateId="widgetIconTemplate">
           <svg cIcon height="85" width="100" name="{{widget.widgetIcon}}" class="abc"></svg>
